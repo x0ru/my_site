@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block title %}
+this is dafafafa
+{% endblock %}
+
+{% block css_styles %}
+    <link rel="stylesheet" href="{% static 'blog/post.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/index.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section id="welcome">
+    <header>
+        <img src="{% static 'blog/images/max.png' %}" alt="Barts photo">
+        <h2>
+            Barts blog
+        </h2>
+    </header>
+    <p>Hi, I'am bart and i like glue number two</p>
+</section>
+<section id="latest-posts">
+    <h2>
+        My latest posts
+    </h2>
+    <ul>
+        {% for post in posts %}
+            {% include 'blog/includes/post.html' %}
+        {% endfor %}
+    </ul>
+</section>
+<section id="about">
+     <h2>What we do</h2>
+    <p>I'm new to this, I like pokemon and don't like pokimane</p>
+    <p>I am keen to go for a ride and susss</p>
+</section>
+{% endblock %}
